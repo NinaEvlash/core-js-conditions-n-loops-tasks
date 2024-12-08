@@ -21,8 +21,11 @@
  *  0  => true
  *  -5 => false
  */
-function isPositive(/* number */) {
-  throw new Error('Not implemented');
+function isPositive(number) {
+  let res = true;
+  if (number === 0 || number % 2 === 0) res = true;
+  else res = false;
+  return res;
 }
 
 /**
@@ -38,8 +41,12 @@ function isPositive(/* number */) {
  *  -5, 0, 5      => 5
  *  -0.1, 0, 0.2  => 0.2
  */
-function getMaxNumber(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getMaxNumber(a, b, c) {
+  let res;
+  if (a > b && a > c) res = a;
+  else if (b > a && b > c) res = b;
+  else res = c;
+  return res;
 }
 
 /**
@@ -60,8 +67,13 @@ function getMaxNumber(/* a, b, c */) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
+function canQueenCaptureKing(queen, king) {
+  let res = false;
+  if (queen.x === king.x || queen.y === king.y) res = true;
+  else if (queen.x === queen.y && king.x === king.y) res = true;
+  else if (queen.x + queen.y === king.x + king.y) res = true;
+  else res = false;
+  return res;
 }
 
 /**
@@ -82,8 +94,12 @@ function canQueenCaptureKing(/* queen, king */) {
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isIsoscelesTriangle(a, b, c) {
+  let res = false;
+  if (a === b && !(a - b >= c || a + b <= c)) res = true;
+  else if (a === c && !(a - c >= b || a + c <= b)) res = true;
+  else if (b === c && !(b - c >= a || b + c <= a)) res = true;
+  return res;
 }
 
 /**
